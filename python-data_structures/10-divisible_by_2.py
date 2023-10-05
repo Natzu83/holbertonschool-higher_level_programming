@@ -1,4 +1,3 @@
-#!/usr/bin/python3
 def max_integer(my_list=[]):
     # Check if the list is empty
     if not my_list:

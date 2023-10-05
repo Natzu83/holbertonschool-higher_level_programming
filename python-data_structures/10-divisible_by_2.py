@@ -1,16 +1,17 @@
 #!/usr/bin/python3
-def max_integer(my_list=[]):
-    # Check if the list is empty
-    if not my_list:
-        return None
+def divisible_by_2(my_list=[]):
+    if my_list is None:
+        return
+    if len(my_list) == 0:
+        return
 
-    # Initialize the maximum value as the first element of the list
-    max_value = my_list[0]
+    new_list = list(my_list)
 
-    # Iterate through the list starting from the second element
-    for num in my_list[1:]:
-        # Compare each element with the current maximum value
-        if num > max_value:
-            max_value = num
-
-    return max_value
+    i = 0
+    for element in my_list:
+        if element % 2 == 0:
+            new_list[i] = True
+        else:
+            new_list[i] = False
+        i = i + 1
+    return(new_list)

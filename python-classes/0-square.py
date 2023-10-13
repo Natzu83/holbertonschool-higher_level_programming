@@ -1,6 +1,7 @@
 #!/usr/bin/python3
-"""Class that defines a square"""
+""" Write an empty class Rectangle that defines a rectangle"""
 
 
-class Square:
+class Rectangle:
+    """ Class of rectangle"""
     pass

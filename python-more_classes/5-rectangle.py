@@ -1,64 +1,110 @@
 #!/usr/bin/python3
-"""4. Eval is magic"""
+"""Bye rectangle"""
 
 
 class Rectangle:
-    """Write a class rectangle"""
+    """Rectangle class"""
 
     def __init__(self, width=0, height=0):
-        """Atributes of the rectangle"""
+        """
+        Initialization method for the Rectangle class
 
+        Attributes:
+            width: Width of rectangle
+            height: Height of rectangle
         self.width = width
         self.height = height
+        """
+        self.height = height
+        self.width = width
 
     @property
     def width(self):
-        """Retrieve the width of Rectangle"""
-        return (self.__width)
+        """
+        Property width to retrieve it
+
+        Returns:
+            width: Width of rectangle
+        """
+        return self.__width
 
     @width.setter
     def width(self, value):
-        if not isinstance(value, int):
+        """
+        Setter width of the rectangle
+
+        Attributes:
+            width: Width of rectangle
+
+        Raises:
+            TypeError: If width is not an integer
+            ValueError: If width is less than 0
+        """
+        if type(value) is not int:
             raise TypeError("width must be an integer")
         elif value < 0:
-            raise ValueError("width must be >=0")
-        self.__width = value
+            raise ValueError("width must be >= 0")
+        else:
+            self.__width = value
 
     @property
     def height(self):
-        """Retrieve the height of Rectangle"""
-        return (self.__height)
+        """
+        Property height to retrieve it
+
+        Returns:
+            height: Height of rectangle
+        """
+        return self.__height
 
     @height.setter
     def height(self, value):
-        if not isinstance(value, int):
+        """
+        Setter height of the rectangle
+
+        Attributes:
+            height: height of rectangle
+
+        Raises:
+            TypeError: If height is not an integer
+            ValueError: If height is less than 0
+        """
+        if type(value) is not int:
             raise TypeError("height must be an integer")
         elif value < 0:
-            raise ValueError("height must be >=0")
-        self.__height = value
+            raise ValueError("height must be >= 0")
+        else:
+            self.__height = value
 
     def area(self):
-        """returns the rectangle area"""
-        return (self.__width * self.__height)
+        """Return the area of the rectangle"""
+        return self.width * self.height
 
     def perimeter(self):
-        """return perimeter of the rectangle."""
-        if self.__width == 0 or self.__height == 0:
+        """Returns the perimeter of the rectangle"""
+        if self.width > 0 and self.height > 0:
+            return (self.width * 2) + (self.height * 2)
+        else:
             return 0
-        return ((self.__width * 2) + (self.__height * 2))
 
     def __str__(self):
-        """ __str__ method to print the Rectangle """
-        result = ""
-        if self.height == 0 or self.width == 0:
-            return (result)
-        for x in range(self.height):
-            for y in range(self.width):
-                result += "#"
-            result += "\n"
-        result = result[0:-1]
-        return (result)
+        """Prints string representation of rectangle"""
+        string = ""
+        if self.width > 0 and self.height > 0:
+            for row in range(self.height):
+                for col in range(self.width):
+                    string += '#'
+                if row < self.height - 1:
+                    string += '\n'
+            return string
+        else:
+            return string
 
     def __repr__(self):
-        """ return a string representation of the rectangle  """
-        return ("Rectangle(" + str(self.width) + ", " + str(self.height) + ")")
+        """Return literal string representation"""
+        return "Rectangle(" + str(self.__width) + ", " + str(self.__height) +\
+            ")"
+
+    def __del__(self):
+        """Prints after deletion"""
+        print("Bye rectangle...")

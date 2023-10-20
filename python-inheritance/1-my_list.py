@@ -1,10 +1,23 @@
 #!/usr/bin/python3
-""" Create a sorted copy of the list"""
-class MyList(list):
+class Mylist(list):
+    """
+    MyList class inherits from list.
+    
+    This class provides an additional method, print_sorted,
+    that prints the list in ascending order.
+    """
+    def __init__(self):
+        """
+        Stars an instance of MyList.
+        This constructor stars the MyList object.
+        """
+        super().__init__()
+
     def print_sorted(self):
+        """
+        Prints the list in ascending order.
+        This method sorts the list in ascending order using the sorted function
+        and prints the sorted list.
+        """
         sorted_list = sorted(self)
         print(sorted_list)
-
-""" Example usage: """
-my_list = MyList([5, 1, 3, 2, 4])
-my_list.print_sorted()

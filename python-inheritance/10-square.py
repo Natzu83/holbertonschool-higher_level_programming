@@ -1,33 +1,24 @@
 #!/usr/bin/python3
 """
-Rectangle that inherits from BaseGeometry
+Square that inherits from Rectangle (9-rectangle.py):
 
-Instantiation with width and height: def __init__(self, width, height)::
-width and height must be private. No getter or setter
-width and height must be positive integers validated by integer_validator
+Instantiation with size: def __init__(self, size)::
+size must be private. No getter or setter
+size must be a positive integer, validated by integer_validator
 the area() method must be implemented
-print() should print, and str() should return, the following rectangle
-    description: [Rectangle] <width>/<height>
 """
+Rectangle = __import__('9-rectangle').Rectangle
 
-BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
+class Square(Rectangle):
+    """The square class based on rectangle"""
 
-class Rectangle(BaseGeometry):
-    """
-    This is a Rectangle class!
-    """
-    def __init__(self, width, height):
+    def __init__(self, size):
         """This is the Initialization Method"""
-        self.integer_validator("width", width)
-        self.integer_validator("height", height)
-        self.__width = width
-        self.__height = height
+        self.integer_validator("size", size)
+        super().__init__(size, size)
+        self.__size = size
 
     def area(self):
-        """Returns area of rectangle"""
-        return (self.__width * self.__height)
-
-    def __str__(self):
-        """Return string representation of rectangle"""
-        return "[Rectangle] {}/{}".format(self.__width, self.__height)
+        """Calculate the area of the square"""
+        return self.__size ** 2

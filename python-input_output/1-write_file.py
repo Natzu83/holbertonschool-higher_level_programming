@@ -1,6 +1,10 @@
 #!/usr/bin/python3
-"""Create function that writes a file"""
+"""Module write to a file"""
+
+
 def write_file(filename="", text=""):
+    """ Function that writes a string to a text file (UTF8)
+    and returns the number of characters written: """
     with open(filename, "w", encoding="utf-8") as file:
-        chars_written = file.write(text)
-    return chars_written
+        n_chars = file.write(text)
+    return n_chars

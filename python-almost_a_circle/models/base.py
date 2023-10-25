@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""This module contains a class to serve as base for other classes"""
+"""Module that contains a class to serve as base for other classes"""
 
 
 import csv
@@ -9,7 +9,7 @@ import turtle
 
 
 class Base:
-    """Represents base of all classes created """
+    """Represents base of all the classes created """
 
     __nb_objects = 0
 

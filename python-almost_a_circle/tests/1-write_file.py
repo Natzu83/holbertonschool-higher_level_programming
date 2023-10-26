@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This Module contains function that writes a string
+Function that writes a string
 to text file and returns number of characters written
 """
 

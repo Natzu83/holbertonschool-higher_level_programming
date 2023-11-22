@@ -4,3 +4,5 @@
 -- Number of records for the score with the label number
 -- List should be sorted by the number of records (descending)
 SELECT score, COUNT(score) AS number
+FROM second_table
+GROUP BY score

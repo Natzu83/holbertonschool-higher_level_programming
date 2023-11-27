@@ -9,3 +9,8 @@ Base = declarative_base()
 
 
 class State(Base):
+    '''Class that inhertis from Base'''
+
+    __tablename__ = 'states'
+    id = Column(Integer, primary_key=True, nullable=False, autoincrement=True)
+    name = Column(String(128), nullable=False)
